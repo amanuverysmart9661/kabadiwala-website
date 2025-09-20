@@ -1,0 +1,782 @@
+
+:root{
+  --green:#2bb673;
+  --orange:#ff6f3c;
+  --deep:#062014;
+  --bg:#f6fbf8;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --glass: rgba(255,255,255,0.7);
+  --maxw:1200px;
+  --accent-grad: linear-gradient(135deg,var(--green),#54c17a 40%, var(--orange));
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;color:var(--deep);background:var(--bg);-webkit-font-smoothing:antialiased}
+.container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:100;background:linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.6));backdrop-filter:blur(6px);border-bottom:1px solid rgba(2,6,23,0.04)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.logo{height:44px}
+nav.nav{display:flex;gap:12px;align-items:center}
+nav.nav a{color:var(--deep);text-decoration:none;font-weight:700;padding:8px 10px;border-radius:8px}
+nav.nav a:hover{background:rgba(43,186,115,0.08)}
+
+/* Hero */
+.hero-section{position:relative;height:82vh;min-height:520px;display:flex;align-items:center;overflow:hidden;background:#000;border-bottom-left-radius:40px;border-bottom-right-radius:40px}
+.bg-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(0.45) saturate(0.95)}
+.hero-overlay{position:relative;z-index:5;display:flex;gap:32px;align-items:flex-start;width:100%;padding:48px 20px}
+.hero-left{max-width:720px;color:white}
+.hero-title{font-size:clamp(36px,6vw,84px);line-height:0.9;margin:0 0 12px;font-weight:900;letter-spacing:-1px; text-shadow: 0 6px 30px rgba(0,0,0,0.6)}
+
+/* 3D text */
+.text-3d{
+  color:#fff;
+  font-weight:900;
+  text-transform:none;
+  position:relative;
+  display:inline-block;
+  transform:translateZ(0);
+  text-shadow: 0 1px 0 rgba(0,0,0,0.15), 0 2px 0 rgba(0,0,0,0.12), 0 4px 8px rgba(0,0,0,0.35);
+}
+.accent-bg{background:var(--green);color:#062014;padding:8px 12px;border-radius:8px;display:inline-block;box-shadow:0 8px 30px rgba(43,186,115,0.18)}
+
+/* hero subtitle with gradient underline */
+.hero-sub{color:rgba(255,255,255,0.93);margin-bottom:18px;font-size:1.05rem;max-width:70%}
+
+/* call-to-actions */
+.hero-actions{display:flex;gap:12px;margin-top:8px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:800;cursor:pointer}
+.btn.primary{background:var(--accent-grad);color:#fff;box-shadow:0 12px 30px rgba(43,186,115,0.14);border:0}
+.btn.ghost{background:transparent;border:2px solid rgba(255,255,255,0.14);color:#fff}
+
+/* booking card */
+.hero-card{width:380px;background:linear-gradient(180deg,#ffffff, #fbfffb);padding:20px;border-radius:16px;box-shadow:0 30px 60px rgba(2,6,23,0.22);color:var(--deep)}
+.form-toggle{display:flex;gap:8px;margin-bottom:14px}
+.toggle-btn{flex:1;padding:10px;border-radius:10px;border:1px solid #e6eef0;background:#f7fafb;cursor:pointer;font-weight:800}
+.toggle-btn.active{background:var(--green);color:#062014;border-color:var(--green)}
+
+/* forms */
+.card-form input, .card-form select, .card-form textarea {width:100%;padding:12px;border-radius:10px;border:1px solid #eef3f0;margin-bottom:10px;font-size:14px;background:#fff}
+.card-form button{padding:10px 12px;border-radius:10px;border:0;background:var(--orange);color:white;font-weight:800;cursor:pointer}
+
+/* decorative wave */
+.hero-separator{position:absolute;left:0;right:0;bottom:-1px;z-index:4;line-height:0}
+.hero-wave{width:100%;height:84px;display:block}
+
+/* content panel */
+.section-panel{margin-top:-56px;background:linear-gradient(180deg,#e9fbef,#f7fff9);border-radius:20px;box-shadow:0 30px 80px rgba(2,6,23,0.06);padding:48px 20px;position:relative;z-index:2}
+
+/* cards & visuals */
+.section-title{font-size:28px;margin:0 0 18px;font-weight:900;color:var(--deep)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.card{background:var(--card);padding:20px;border-radius:14px;box-shadow:0 18px 40px rgba(2,6,23,0.06);border:1px solid rgba(2,6,23,0.03)}
+
+/* leadership */
+.leadership{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
+.leader{background:linear-gradient(180deg,#fff,#fbfffb);padding:18px;border-radius:12px;display:flex;gap:14px;align-items:center;box-shadow:0 12px 30px rgba(2,6,23,0.05)}
+.leader img{width:110px;height:110px;border-radius:10px;object-fit:cover;background:#f0f0f0;border:1px solid #eef2f5}
+
+/* calculator */
+.calc-grid{display:grid;grid-template-columns:1fr 360px;gap:18px;align-items:start}
+.price-row{display:flex;gap:12px;margin-bottom:12px;align-items:center}
+.price-row input[type="number"]{width:140px;padding:10px;border-radius:8px;border:1px solid #e6eef0}
+
+/* admin forms */
+.admin-section .card{background:linear-gradient(180deg,#fff,#fbfffb)}
+
+/* footer */
+.site-footer{padding:36px 0;background:linear-gradient(180deg,#062014,#08261a);color:#dfeee6;margin-top:28px;border-top-left-radius:20px;border-top-right-radius:20px}
+.footer-inner{display:flex;justify-content:space-between;align-items:center}
+
+/* responsive */
+@media(max-width:900px){
+  .hero-overlay{flex-direction:column;padding:28px}
+  .leadership{grid-template-columns:1fr}
+  .calc-grid{grid-template-columns:1fr}
+  .hero-card{width:100%}
+}
+
+
+/* Calculator enhanced styling */
+.cards > aside.card { align-self:flex-start; }
+.btn.primary { transition:transform .12s ease, box-shadow .12s ease; }
+.btn.primary:active { transform:translateY(2px); box-shadow:0 8px 20px rgba(43,186,115,0.12); }
+.price-display { font-weight:700; color:var(--deep); margin-top:6px; }
+#calc_total { color:var(--green); text-shadow: 0 6px 18px rgba(43,186,115,0.08); }
+
+/* responsive: stack nicely */
+@media (max-width:880px) {
+  .cards { flex-direction:column; }
+  .cards > aside.card { width:100% }
+}
+
+
+/* ===== Fixes applied: header stacking, hero wave, spacing, colors ===== */
+
+/* make header highest so it won't be overlapped by hero visuals */
+.site-header{position:sticky;top:0;z-index:1200;}
+
+/* ensure hero content sits above wave */
+.hero-overlay, .hero-card, .hero-left { position:relative; z-index:30;}
+
+/* put wave behind header & hero content */
+.hero-separator { position:absolute; left:0; right:0; bottom:-2px; z-index:20; pointer-events:none; }
+.hero-separator .hero-wave { height:62px; } /* reduce intrusion */
+
+/* section panel spacing: move down and add padding so heading not inside curve */
+.section-panel { margin-top:-36px; padding-top:98px; border-radius:18px; }
+
+/* if hero card overlaps on wide screens, reduce width and float it slightly */
+.hero-card { width:340px; margin-left:auto; transform:translateY(0); }
+
+/* adjust booking card so it doesn't overflow on small screens */
+@media (max-width:1100px){
+  .hero-card{ width:360px; position:relative; right:0; top:0; box-shadow:0 18px 40px rgba(2,6,23,0.16); }
+  .hero-overlay { flex-direction:column; gap:18px; align-items:center; padding:24px; }
+  .section-panel { margin-top:-20px; padding-top:68px; }
+}
+
+/* overall color tuning: prefer green + orange accents, reduce white blocks */
+:root{
+  --green:#21a462;
+  --green-dark:#0b3e23;
+  --orange:#ff6f3c;
+  --card-bg: linear-gradient(180deg,#fbfffb,#f1fff4);
+  --accent-grad: linear-gradient(135deg,var(--green), #54c17a 40%, var(--orange));
+}
+.btn.primary{ background: var(--accent-grad); color:#fff; }
+.btn.ghost, .btn.outline{ border:2px solid rgba(11,62,35,0.06); color:var(--green-dark); }
+
+/* reduce large white footprints: card backgrounds subtle green tint */
+.card{ background: rgba(255,255,255,0.95); }
+.section-panel, .cards .card { background: rgba(245,255,250,0.9); }
+
+/* improved hero title 3D feel */
+.text-3d{ text-shadow: 0 6px 24px rgba(0,0,0,0.45); }
+
+/* ensure footer rounded corner not overlap */
+.site-footer{ border-top-left-radius:28px;border-top-right-radius:28px; }
+
+/* small fix: booking form panel doesn't overflow wave */
+.booking-card { max-width:360px; box-sizing:border-box; }
+
+
+/* ===== KTM-style theme (orange + black) applied as requested ===== */
+:root{
+  --ktm-orange: #ff6600;
+  --ktm-black: #0b0b0b;
+  --ktm-dark: #111111;
+  --ktm-light: #1f1f1f;
+  --ktm-card: linear-gradient(180deg, rgba(255,102,0,0.06), rgba(17,17,17,0.12));
+  --ktm-accent: linear-gradient(90deg, var(--ktm-orange), #ff8a3d);
+  --text-on-dark: #ffffff;
+}
+/* apply to body background mildly dark */
+body{ background: linear-gradient(180deg, #0b0b0b, #121212); color:var(--text-on-dark); }
+/* header contrast */
+.site-header{ background: rgba(255,255,255,0.03); border-bottom:1px solid rgba(255,255,255,0.04); color:var(--text-on-dark); }
+.site-header .nav a{ color:var(--text-on-dark); opacity:0.95; }
+.logo { filter: none; }
+.hero-section{ border-bottom-left-radius:40px; border-bottom-right-radius:40px; background:linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.6)); }
+/* cards become dark with orange highlights */
+.card, .hero-card, .booking-card, .cards .card { background: rgba(17,17,17,0.95); color:var(--text-on-dark); border:1px solid rgba(255,255,255,0.03); box-shadow: 0 20px 60px rgba(0,0,0,0.6); }
+/* section panel with subtle orange top band */
+.section-panel { background: linear-gradient(180deg, rgba(255,102,0,0.06), rgba(17,17,17,0.06)); color:var(--text-on-dark); }
+/* buttons: orange primary, dark outline */
+.btn.primary { background: var(--ktm-accent); color:var(--text-on-dark); box-shadow: 0 14px 40px rgba(255,102,0,0.12); }
+.btn.ghost, .btn.outline { background: transparent; border:1px solid rgba(255,255,255,0.06); color:var(--text-on-dark); }
+/* hero text adjusted to stand out on dark bg */
+.hero-title, .text-3d { color:var(--text-on-dark); text-shadow: 0 10px 30px rgba(0,0,0,0.7); }
+/* forms input on dark cards */
+.card-form input, .card-form select, .card-form textarea, input, textarea { background: rgba(255,255,255,0.04); color:var(--text-on-dark); border:1px solid rgba(255,255,255,0.06); }
+.price-display, #calc_total, #items_total { color: var(--ktm-orange); font-weight:900; }
+/* reduce opacity of muted text to keep emphasis */
+.muted{ color: rgba(255,255,255,0.75); }
+footer.site-footer{ background: linear-gradient(180deg,#0b0b0b,#000000); color:var(--text-on-dark); }
+
+
+/* Ensure hero separator stays behind hero content and not overlapping headings */
+.hero-separator { z-index:5; bottom:-2px; }
+.section-panel { margin-top:-18px; padding-top:90px; }
+.hero-overlay { align-items:center; gap:28px; }
+.hero-card { margin-right:20px; }
+
+
+/* Center hero-overlay children vertically and keep booking card in left middle */
+.hero-overlay { display:flex; align-items:center; justify-content:space-between; padding:40px 20px; }
+.hero-card { align-self:center; }
+.hero-left { flex:1; padding-left:40px; }
+@media (max-width:1100px){ .hero-overlay { flex-direction:column; padding:24px; } .hero-left{ padding-left:0; } .hero-card{ width:100%; } }
+
+/* Accessibility & layout fixes applied */
+
+/* === Accessibility & layout fixes applied: readable form fields, hero-card sizing, no-overlap rules === */
+
+/* Make form inputs/selects/textarea clearly readable: white bg with dark text for forms */
+.card-form input, .card-form select, .card-form textarea,
+input, select, textarea {
+  background: #ffffff !important;
+  color: #0b0b0b !important;
+  border: 1px solid rgba(0,0,0,0.12) !important;
+  box-shadow: none !important;
+}
+
+/* Ensure select options show readable text */
+.card-form select option, select option { color: #0b0b0b !important; background:#fff; }
+
+/* Reduce franchise card height and allow scrolling if content exceeds */
+.hero-card, .booking-card { max-height: 520px; overflow:auto; padding:18px; box-sizing:border-box; }
+
+/* Ensure hero overlay does not push content under header */
+.site-header { position: sticky; top: 0; z-index: 1400; }
+.hero-section { padding-top: 18px; }
+/* Ensure section panel is pushed down enough */
+.section-panel { margin-top: -18px; padding-top: 110px; }
+
+/* Avoid hero card overlapping the section panel */
+.hero-separator { z-index: 8; }
+.hero-overlay { z-index: 30; position:relative; }
+
+/* Make form labels bold and visible */
+.card-form label, .card-form h4 { color: #0b0b0b !important; font-weight:700; }
+
+/* Make small text on dark cards visible where needed */
+.card .muted, .muted { color: rgba(255,255,255,0.85) !important; }
+
+/* Ensure calculator values are visible on dark bg */
+#items_total, #tax_total, #calc_total, .price-display, #iron_total, #plastic_total, #tin_total, #other_total, #books_total {
+  color: var(--ktm-orange) !important;
+  font-weight: 800;
+}
+
+/* On smaller screens, remove negative margins causing overlap */
+@media (max-width: 900px){
+  .section-panel { margin-top: 0; padding-top: 40px; }
+  .hero-card { max-height: none; width:100%; }
+  .hero-overlay { padding: 18px; flex-direction:column; gap:14px; }
+}
+
+
+/* Toggle buttons for pickup/franchise */
+.form-toggle{ display:flex; gap:8px; margin-bottom:14px; }
+.toggle-btn{ flex:1; padding:10px; border-radius:10px; border:1px solid rgba(0,0,0,0.06); background:transparent; cursor:pointer; font-weight:700; color:rgba(255,255,255,0.9); }
+.toggle-btn.active{ color: var(--ktm-orange); background: rgba(255,255,255,0.04); border-color: rgba(255,102,0,0.6); box-shadow: 0 8px 20px rgba(255,102,0,0.06); }
+/* hidden class */
+.hidden{ display:none !important; }
+
+
+
+/* quick booking color */
+.quick-booking h3, .quick-booking .title, .quick-booking .heading {
+  color: var(--ktm-orange) !important;
+  font-weight:800;
+}
+/* style for active toggle orange text */
+.toggle-btn.active { color: var(--ktm-orange) !important; border-color: rgba(255,102,0,0.6) !important; }
+
+
+/* FORCE: Quick Booking heading orange (very specific) */
+.hero-card .quick-booking h3, .hero-card .quick-booking .heading, .hero-card .quick-booking .title,
+.quick-booking h3, .quick-booking .heading, .quick-booking .title {
+  color: #ff6600 !important;
+  -webkit-text-stroke: 0px rgba(0,0,0,0.0);
+  font-weight:800 !important;
+}
+.quick-booking-title {
+  color: #ff6600 !important; /* Orange */
+  font-weight: 800;
+}
+/* Make Quick Booking heading orange */
+#pickupForm h4 {
+  color: #ff6600 !important;   /* bright orange */
+  font-weight: bold;           /* makes it bolder */
+}
+/* =========================
+   Aone KABADI — UI fixes
+   Insert at the bottom of styles.css
+   ========================= */
+
+/* Colors used */
+:root {
+  --ktm-orange: #ff6600;
+  --ktm-green:  #2a9d47;
+  --muted:      #6b6f6b;
+  --card-bg:    #ffffff;
+  --deep:       #163d2b;
+}
+
+/* Quick Booking heading orange */
+.quick-booking-title,
+#pickupForm h4,
+#franchiseForm h4 {
+  color: var(--ktm-orange) !important;
+  font-weight: 800;
+  margin: 0 0 10px;
+}
+
+/* Toggle buttons */
+.form-toggle {
+  display:flex;
+  gap:8px;
+  margin-bottom:14px;
+  align-items:center;
+}
+.form-toggle .toggle-btn {
+  flex:1;
+  border-radius:10px;
+  padding:10px 14px;
+  border:1px solid rgba(255,255,255,0.12);
+  background:transparent;
+  color:#ffffff;
+  font-weight:700;
+  cursor:pointer;
+  transition:all .18s ease;
+}
+.form-toggle .toggle-btn.active {
+  background: linear-gradient(90deg,var(--ktm-orange), #ff8a3d);
+  color:#fff;
+  box-shadow: 0 6px 16px rgba(255,102,0,0.12);
+}
+.form-toggle .toggle-btn:not(.active) {
+  background: rgba(255,255,255,0.03);
+  color: rgba(255,255,255,0.95);
+}
+.form-toggle .toggle-btn:focus { outline: 3px solid rgba(255,102,0,0.12); }
+
+/* helper */
+.hidden { display:none !important; }
+
+/* ensure form inputs are visible on dark card */
+.booking-card input,
+.booking-card select,
+.booking-card textarea {
+  background: #fff;
+  color: #111;
+  border: 1px solid #e6efe6;
+  padding:10px;
+  border-radius:8px;
+}
+
+/* smaller screens */
+@media (max-width:860px) {
+  .hero-overlay { flex-direction: column; gap:20px; }
+  .hero-card { width:100%; }
+}
+
+/* small transition for forms */
+.toggle-form { transition: opacity .25s ease, transform .20s ease; }
+.toggle-form.hidden { opacity:0; transform: translateY(6px); pointer-events:none; }
+.toggle-form:not(.hidden){ opacity:1; transform:none; pointer-events:auto; }
+/* Toggle button styling */
+.form-toggle .toggle-btn {
+  background: transparent;
+  border: 2px solid orange;
+  color: orange;
+  font-weight: bold;
+  padding: 8px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* When active */
+.form-toggle .toggle-btn.active {
+  background: orange;
+  color: black;   /* 👈 THIS makes the text black when active */
+}
+
+/* Optional hover effect */
+.form-toggle .toggle-btn:hover:not(.active) {
+  background: rgba(255, 165, 0, 0.1);
+}
+/* =========================
+   Calculator Fixes — inserted at end
+   ========================= */
+
+/* Force calculator cards to be light theme for readability */
+#calculator .card,
+#calculator div[style*="background"],
+#calculator aside.card {
+  background: #ffffff !important;
+  color: #111 !important;
+  border: 1px solid #e6efe6 !important;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08) !important;
+}
+
+/* Calculator inputs: white bg, black text */
+#calculator input[type="number"] {
+  background: #fff !important;
+  color: #111 !important;
+  border: 1px solid #e6efe6 !important;
+  font-weight:600;
+}
+
+/* Item names and labels inside calculator */
+#calculator .calc-row div {
+  color: #111 !important;
+}
+
+/* Price labels (small grey) */
+#calculator .calc-row div[style*="font-size:13px"],
+#calculator .calc-row .price-label {
+  color: var(--muted) !important;
+}
+
+/* Totals in orange */
+#calculator .calc-row div[id$="_total"],
+#calculator #items_total,
+#calculator #tax_total,
+#calculator #calc_total {
+  color: var(--ktm-orange) !important;
+  font-weight: 800 !important;
+}
+
+/* Grand total bigger */
+#calculator #calc_total {
+  font-size: 28px !important;
+  font-weight: 900 !important;
+  text-shadow: 0 4px 10px rgba(255,102,0,0.08);
+}
+
+/* Buttons inside calculator */
+#calculator .btn.primary {
+  background: var(--ktm-accent);
+  color: #fff !important;
+  font-weight: 800;
+}
+#calculator .btn.outline {
+  background: #fff;
+  border: 2px solid var(--ktm-orange);
+  color: var(--ktm-orange) !important;
+  font-weight: 700;
+}
+
+/* Estimate card text readable */
+#calculator aside.card {
+  color: #111 !important;
+}
+
+/* Muted helper text inside calculator */
+#calculator small,
+#calculator .muted {
+  color: var(--muted) !important;
+}
+
+/* === About page small image carousel === */
+.image-carousel {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding: 12px 0;
+}
+
+.image-track {
+  display: flex;
+  gap: 14px;
+  animation: scroll 40s linear infinite; /* continuous scroll */
+}
+
+/* === About page image carousel (bigger images) === */
+.image-carousel {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding: 16px 0;
+}
+
+.image-track {
+  display: flex;
+  gap: 18px;
+  animation: scroll 40s linear infinite; /* continuous scroll */
+}
+
+.image-carousel img {
+  height: 260px;       /* 🔥 bigger images (was 120px) */
+  width: auto;
+  border-radius: 14px;
+  object-fit: cover;
+  flex-shrink: 0;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect */
+.image-carousel img:hover {
+  transform: scale(1.08);
+}
+
+/* Scroll animation */
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Pause when hovering carousel */
+.image-carousel:hover .image-track {
+  animation-play-state: paused;
+}
+
+/* Responsive (medium screens) */
+@media (max-width: 1024px) {
+  .image-carousel img {
+    height: 200px;
+  }
+}
+
+/* Responsive (small screens) */
+@media (max-width: 768px) {
+  .image-carousel img {
+    height: 140px;
+  }
+}
+/* ====== Supercool Contact Styles (append) ====== */
+:root{
+  --bg-dark:#070707;
+  --panel:#0f0f0f;
+  --muted:#cfcfcf;
+  --accent1:#ff7a18;
+  --accent2:#ff4e50;
+  --neon:#18ffff;
+  --glass: rgba(255,255,255,0.03);
+  --radius:14px;
+  --shadow-lg: 0 18px 50px rgba(0,0,0,0.7);
+}
+
+.contact-wrap{
+  display:grid;
+  grid-template-columns: 1fr 360px;
+  gap:22px;
+  align-items:start;
+  margin-top:18px;
+}
+
+/* Card base */
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius: var(--radius);
+  padding:0;
+  position:relative;
+  overflow:hidden;
+  box-shadow: var(--shadow-lg);
+  border:1px solid rgba(255,255,255,0.03);
+  backdrop-filter: blur(6px) saturate(120%);
+}
+
+/* inner padding so we can add glow shapes absolutely positioned */
+.card .card-inner{padding:28px 28px 32px 28px; position:relative; z-index:2}
+
+/* left form card specifics */
+.form-card{min-height:300px;}
+.form-orb{
+  position:absolute; right:-120px; top:-80px; width:420px; height:420px;
+  background: radial-gradient(circle at 30% 30%, rgba(255,126,0,0.10), transparent 20%),
+              radial-gradient(circle at 70% 70%, rgba(24,255,255,0.03), transparent 30%);
+  transform: rotate(16deg);
+  filter: blur(28px);
+  pointer-events:none; opacity:0.95;
+}
+
+/* info card specifics */
+.info-card{display:flex; align-items:stretch; min-height:220px;}
+.info-orb{
+  position:absolute; left:-100px; bottom:-80px; width:300px; height:300px;
+  background: radial-gradient(circle at 30% 30%, rgba(24,255,255,0.06), transparent 20%),
+              radial-gradient(circle at 70% 70%, rgba(255,126,0,0.03), transparent 30%);
+  transform: rotate(-16deg);
+  filter: blur(18px);
+  pointer-events:none;
+}
+
+/* Form layout */
+.contact-form{display:block}
+.row.two{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+.row.full{margin-top:10px}
+
+/* floating labels */
+.field{position:relative;height:52px;background:transparent;border-radius:8px;display:flex;align-items:center}
+.field input,
+.field textarea{
+  width:100%; background:transparent; border:1px solid rgba(255,255,255,0.05);
+  padding:14px 14px 12px 14px; outline:none; color:var(--muted); font-size:15px;
+  border-radius:8px; resize:vertical; transition: box-shadow .18s, border-color .18s;
+  backdrop-filter: blur(2px);
+}
+.field textarea{min-height:120px;padding:14px}
+.field input:focus, .field textarea:focus{
+  box-shadow: 0 6px 28px rgba(24,255,255,0.03), 0 2px 8px rgba(255,126,0,0.03);
+  border-color: rgba(255,255,255,0.12);
+}
+
+/* label */
+.flabel{
+  position:absolute; left:14px; top:12px; font-size:13px; color:rgba(255,255,255,0.55);
+  pointer-events:none; transition: transform .18s, font-size .18s, top .18s, color .18s;
+  background:transparent; padding:0 6px;
+}
+.field input:focus + .flabel,
+.field input:not(:placeholder-shown) + .flabel,
+.field textarea:focus + .flabel,
+.field textarea:not(:placeholder-shown) + .flabel{
+  transform: translateY(-22px);
+  font-size:12px;
+  color:var(--neon);
+}
+
+/* we use placeholder trick so :placeholder-shown works */
+.field input::placeholder, .field textarea::placeholder{color:transparent}
+
+/* Actions */
+.actions{display:flex;gap:16px;align-items:center;margin-top:14px}
+.btn{
+  padding:12px 18px;border-radius:12px;border:0;font-weight:700;cursor:pointer;
+  background:linear-gradient(90deg,var(--accent1),var(--accent2)); color:white; position:relative;
+  box-shadow: 0 10px 30px rgba(255,110,60,0.08), 0 2px 12px rgba(0,0,0,0.6);
+  transition: transform .12s, box-shadow .12s;
+}
+.btn:active{transform:translateY(1px);}
+.btn-glow{overflow:visible}
+.btn-glow::after{
+  content:""; position:absolute; inset:-6px; border-radius:14px; z-index:-1;
+  background: radial-gradient(circle at 10% 10%, rgba(255,120,60,0.12), transparent 10%),
+              linear-gradient(90deg, rgba(24,255,255,0.03), rgba(255,126,0,0.03));
+  filter: blur(18px); opacity:0.9; transition:opacity .25s;
+}
+.btn-glow:hover::after{opacity:1; filter: blur(22px)}
+
+/* small hint text */
+.hint.muted{color:rgba(255,255,255,0.55); font-size:13px}
+
+/* info card content */
+.info-list{list-style:none;padding:0;margin:6px 0 12px 0}
+.info-list li{display:flex;justify-content:space-between;padding:12px 12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.008), transparent); margin-bottom:10px}
+.info-list strong{color:var(--muted); font-weight:600}
+.info-list span{color:#fff; opacity:0.92}
+
+/* socials */
+.socials{display:flex;gap:8px;margin-top:6px}
+.chip{display:inline-block;padding:8px 10px;border-radius:10px;background:rgba(255,255,255,0.02); color:var(--muted); text-decoration:none; font-weight:600}
+
+/* responsive */
+@media (max-width:980px){
+  .contact-wrap{grid-template-columns: 1fr; }
+  .form-orb{display:none}
+  .info-orb{display:none}
+  .card .card-inner{padding:18px}
+}
+.brand img {
+  height: 70px;   /* Bigger logo */
+  max-height: px;
+}
+.site-footer img {
+  height: 60px;   /* Bigger footer logo */
+}
+
+/* =========================
+   CLEAN IMPROVEMENTS
+   ========================= */
+
+/* Unify logo size across header & footer */
+.site-logo {
+  height: 70px;
+  max-height: 70px;
+  width: auto;
+  display: inline-block;
+}
+
+/* Remove duplicated .toggle-btn confusion */
+.form-toggle .toggle-btn {
+  border-radius: 10px;
+  padding: 10px 14px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: transparent;
+  color: rgba(255,255,255,0.95);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all .18s ease;
+}
+.form-toggle .toggle-btn.active {
+  background: linear-gradient(90deg, var(--ktm-orange), #ff8a3d);
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(255,102,0,0.12);
+}
+
+/* Make carousel definition single & clean */
+.image-carousel img {
+  height: 260px;
+  border-radius: 14px;
+  object-fit: cover;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease;
+}
+.image-carousel img:hover {
+  transform: scale(1.08);
+}
+
+#contactReset {
+  color: #ff6600;  /* pick any color you like */
+  font-weight: 600;
+}
+
+/* ✅ General responsive tweaks */
+body {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Header and logo */
+.site-header {
+  padding: 10px 16px;
+}
+.site-logo {
+  height: 80px; /* smaller logo for mobile */
+}
+
+/* Navigation (turn into hamburger menu on small screens) */
+.nav {
+  display: flex;
+  gap: 18px;
+}
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    background: #111;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    left: 0;
+    padding: 20px;
+    display: none; /* default hidden */
+  }
+  .nav.active { display: flex; }  /* toggle open */
+}
+
+/* Contact grid */
+@media (max-width: 980px) {
+  .contact-grid {
+    grid-template-columns: 1fr; /* stack form and info */
+  }
+  .info-card {
+    order: 2;
+  }
+  .form-card {
+    order: 1;
+  }
+}
+
+/* District cards */
+.district-card img {
+  height: auto;
+  max-height: 100px;
+}
+@media (max-width: 600px) {
+  .districts-grid {
+    grid-template-columns: 1fr 1fr; /* 2 per row */
+  }
+}
+@media (max-width: 400px) {
+  .districts-grid {
+    grid-template-columns: 1fr; /* 1 per row */
+  }
+}
+
