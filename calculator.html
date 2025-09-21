@@ -1,0 +1,72 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Calculator - Aone Kabadi</title><link rel="stylesheet" href="styles.css"></head><body><header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html"><img src="assets/logo.svg" class="logo" alt="Aone Kabadi"></a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="initiatives.html">Initiatives</a>
+      <a href="franchise.html">Franchise</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a class="cta" href="rates.html">Check Rate List</a>
+    </nav>
+  </div>
+</header>
+
+<section class="container" id="calculator" style="padding:40px 20px">
+  <h2 class="section-title">Scrap Price Calculator</h2>
+
+  <div class="calc-grid">
+    <div>
+      <p>Enter quantities (kg). Prices are admin-controlled.</p>
+
+      <div class="price-row">
+        <label style="flex:1">Iron (kg)</label>
+        <input id="iron_qty" class="calc-input" type="number" placeholder="kg" min="0" step="0.01">
+        <div class="price-display">Price: <strong id="iron_price_display">₹ 25</strong></div>
+        <div>Total: <span id="iron_total">₹ 0.00</span></div>
+      </div>
+
+      <div class="price-row">
+        <label style="flex:1">Plastic (kg)</label>
+        <input id="plastic_qty" class="calc-input" type="number" placeholder="kg" min="0" step="0.01">
+        <div class="price-display">Price: <strong id="plastic_price_display">₹ 10</strong></div>
+        <div>Total: <span id="plastic_total">₹ 0.00</span></div>
+      </div>
+
+      <div class="price-row">
+        <label style="flex:1">Tin (kg)</label>
+        <input id="tin_qty" class="calc-input" type="number" placeholder="kg" min="0" step="0.01">
+        <div class="price-display">Price: <strong id="tin_price_display">₹ 30</strong></div>
+        <div>Total: <span id="tin_total">₹ 0.00</span></div>
+      </div>
+
+      <div class="price-row">
+        <label style="flex:1">Other (kg)</label>
+        <input id="other_qty" class="calc-input" type="number" placeholder="kg" min="0" step="0.01">
+        <div class="price-display">Price: <strong id="other_price_display">₹ 5</strong></div>
+        <div>Total: <span id="other_total">₹ 0.00</span></div>
+      </div>
+
+      <div class="price-row">
+        <label style="flex:1">Books (kg)</label>
+        <input id="books_qty" class="calc-input" type="number" placeholder="kg" min="0" step="0.01">
+        <div class="price-display">Price: <strong id="books_price_display">₹ 8</strong></div>
+        <div>Total: <span id="books_total">₹ 0.00</span></div>
+      </div>
+
+      <button id="calcBtn" onclick="calcTotal()" class="btn primary" style="margin-top:16px">Calculate</button>
+      <button id="resetBtn" onclick="resetCalculator()" class="btn outline" style="margin-top:16px">Reset</button>
+    </div>
+
+    <aside class="card">
+      <h3>Estimate</h3>
+      <p>Items Total: <span id="items_total">₹ 0.00</span></p>
+      <p>Tax: <span id="tax_total">₹ 0.00</span></p>
+      <p id="calc_total" style="font-size:22px;font-weight:800">₹ 0.00</p>
+      <p><small>Note: Final price is subject to inspection and confirmation at pickup.</small></p>
+    </aside>
+  </div>
+</section>
+
+<footer class="site-footer"><div class="container footer-inner"><div><img src="assets/logo.svg" height="34"><p class="muted">Helping build a greener India — one pickup at a time.</p></div><div class="muted">© <span id="year"></span> Aone Kabadi</div></div></footer><script src="scripts.js"></script></body></html>

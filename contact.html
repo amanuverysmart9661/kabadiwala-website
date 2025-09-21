@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contact - A1 Kabadiwala</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root{
+      --accent1: #ff7a18;
+      --accent2: #ff4e50;
+      --neon: #18ffff;
+      --muted: #cfcfcf;
+      --card-radius: 14px;
+      --shadow-lg: 0 18px 50px rgba(0,0,0,0.6);
+    }
+
+    body {
+      margin:0;
+      font-family: "Inter", system-ui, sans-serif;
+      background:
+        radial-gradient(1200px 400px at 10% 10%, rgba(30,30,30,0.6), transparent 10%),
+        linear-gradient(180deg,#060606 0%, #0f0f0f 100%);
+      color: var(--muted);
+    }
+
+    .container { max-width: 1200px; margin:0 auto; padding:1rem; }
+
+    header.site-header {
+      background: rgba(0,0,0,0.4);
+      backdrop-filter: blur(6px);
+      position: sticky; top:0; z-index:50;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .header-inner {
+      display:flex; justify-content:space-between; align-items:center;
+      padding:0.75rem 0;
+    }
+
+    /* unified header logo size */
+    .brand img { height:70px; width:auto; display:block; }
+
+    .nav a { margin-left:1rem; color:#fff; text-decoration:none; }
+    .nav a:hover { color: var(--neon); }
+
+    .section-title {
+      color: #19b58b;
+      font-size:2.2rem;
+      margin-bottom:1.5rem;
+      font-weight:700;
+      text-align:center;
+    }
+
+    .cards {
+      display:grid;
+      grid-template-columns: 1fr 360px;
+      gap:1.5rem;
+    }
+    .card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--card-radius);
+      box-shadow: var(--shadow-lg);
+      backdrop-filter: blur(8px);
+      padding:2rem;
+    }
+
+    /* Form */
+    form label { display:block; margin-bottom:1rem; color:#fff; font-weight:600; }
+    form input, form textarea {
+      width:100%; padding:0.75rem;
+      background: rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.1);
+      border-radius:10px;
+      color:#fff;
+    }
+    form textarea { min-height:120px; }
+    form input:focus, form textarea:focus {
+      outline:none; border-color: var(--neon);
+      box-shadow:0 0 10px rgba(24,255,255,0.3);
+    }
+    .btn {
+      background: linear-gradient(90deg,var(--accent1),var(--accent2));
+      color:#fff;
+      border:none;
+      padding:0.75rem 1.5rem;
+      border-radius:10px;
+      font-weight:600;
+      cursor:pointer;
+    }
+    .btn:hover { opacity:0.9; }
+
+    /* Info card */
+    .info h2 { margin-top:0; color:#fff; }
+    .info p { margin:0.6rem 0; font-size:1rem; }
+    .info strong { color: var(--neon); }
+
+    /* Team Section */
+    .team {
+      margin-top:3rem;
+      text-align:center;
+    }
+    .team-grid {
+      display:grid;
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      gap:2rem;
+      margin-top:2rem;
+    }
+    .team-member {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--card-radius);
+      box-shadow: var(--shadow-lg);
+      backdrop-filter: blur(6px);
+      padding:1.5rem;
+      text-align:center;
+    }
+    .team-member img {
+      width: 200px !important;
+      height: 200px !important;
+      border-radius: 50% !important;
+      object-fit: cover !important;
+      border: 5px solid var(--neon) !important;
+      margin-bottom: 1rem !important;
+      box-shadow: 0 8px 30px rgba(24,255,255,0.12) !important;
+      display: inline-block !important;
+    }
+    .team-member h3 {
+      margin:0.5rem 0 0;
+      color:#fff;
+      font-size:1.2rem;
+    }
+    .team-member p {
+      margin:0;
+      color:var(--muted);
+      font-size:0.95rem;
+    }
+
+    /* Why Choose Us */
+    .why-us {
+      margin-top:3rem;
+      padding:2.5rem;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--card-radius);
+      box-shadow: var(--shadow-lg);
+      backdrop-filter: blur(6px);
+    }
+    .why-us h2 {
+      color: #ff6600;
+      text-align:center;
+      margin-bottom:1.5rem;
+      font-size:2.4rem; /* bigger heading */
+      font-weight:800;
+    }
+    .why-us ul { list-style: none; padding:0; margin:0; }
+    .why-us ul li {
+      margin:1rem 0;
+      padding-left:1.8rem;
+      position:relative;
+      color:#fff;
+      font-size:1.1rem;
+      line-height:1.6;
+    }
+    .why-us ul li::before {
+      content:"✔";
+      color: var(--neon);
+      position:absolute;
+      left:0;
+      font-weight:bold;
+      font-size:1.2rem;
+    }
+
+    footer {
+      background:#000;
+      padding:1rem 0;
+      margin-top:2rem;
+      color:#aaa;
+    }
+    .footer-inner {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:1rem;
+    }
+    .footer-inner img {
+      height:60px;
+      width:auto;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html"><img src="assets/logo.svg" alt="A1 Kabadiwala"></a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="initiatives.html">Initiatives</a>
+        <a href="franchise.html">Franchise</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="active">Contact</a>
+	<a href="career.html">Careers</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" style="padding:2rem 1rem">
+    <h1 class="section-title">Contact Us</h1>
+    <div class="cards">
+      <!-- Form -->
+      <div class="card">
+        <form method="POST" action="https://formspree.io/f/YOUR_FORM_ID">
+          <label>
+            Name
+            <input type="text" name="name" required>
+          </label>
+          <label>
+            Phone
+            <input type="tel" name="phone" required>
+          </label>
+          <label>
+            Email
+            <input type="email" name="email">
+          </label>
+          <label>
+            Message
+            <textarea name="message"></textarea>
+          </label>
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </div>
+
+      <!-- Info -->
+      <div class="card info">
+        <h2>Get in Touch</h2>
+        <p><strong>Address:</strong> Kasmar, Bokaro (Jharkhand) – 827302</p>
+        <p><strong>Phone1:</strong> +91 6201055346</p>
+	<p><strong>Phone2:</strong> +91 7856815038</p>
+        <p><strong>Email:</strong> <a href="mailto:a1kabadi12@gmail.com" style="color:#fff">a1kabadi12@gmail.com</a></p>
+        <p><strong>Website:</strong> <a href="https://www.aonekabadi.com" target="_blank" style="color:#fff">www.aonekabadi.com</a></p>
+      </div>
+    </div>
+
+    <!-- Team Section -->
+    <section class="team">
+      <h2 class="section-title">Meet Our Team</h2>
+      <div class="team-grid">
+        <div class="team-member">
+          <img src="assets/md.jpeg" alt="Managing Director">
+          <h3>Mr.Sumitbardhan Jaiswal</h3>
+          <p>Managing Director</p>
+        </div>
+        <div class="team-member">
+          <img src="assets/ceo.jpeg" alt="Chief Executive Officer">
+          <h3>Mr.Monty Jaiswal</h3>
+          <p>Chief Executive Officer</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-us">
+      <h2>Why Choose Us</h2>
+      <ul>
+        <li>Trusted waste management partner across India.</li>
+        <li>Door-to-door scrap collection with digital support.</li>
+        <li>Helping brands achieve plastic neutrality and sustainability goals.</li>
+        <li>Transparent pricing with instant scrap value calculator.</li>
+        <li>Eco-friendly practices with tree plantation and recycling initiatives.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div style="display:flex;align-items:center;gap:10px">
+        <img src="assets/logo.svg" alt="A1 Kabadiwala">
+        <span>Helping build a greener India — one pickup at a time.</span>
+      </div>
+      <div>© <span id="year"></span> A1 Kabadiwala</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
